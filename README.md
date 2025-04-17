@@ -1,3 +1,9 @@
+This application is a Temperature Converter and users can input a temperature value and unit and convert it to another unit like Celsius, Fahrenheit or Kelvin.
+
+
+
+
+
 Steps  to deploy on firebase:
 1. Install and connect firebase on the project with this command: npm install -g firebase-tools
 2. Use firebase login command to login in to your firebase account.
