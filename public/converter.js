@@ -40,3 +40,13 @@ form.addEventListener('input', () => {
   const outputTemp = convertTemp(inputTemp, fromUnit, toUnit);
   outputField.value = (Math.round(outputTemp * 100) / 100) + ' ' + toUnit.toUpperCase();
 });
+
+
+
+document.getElementById('cameraInput').addEventListener('change', function (event) {
+  const file = event.target.files[0];
+  if (file) {
+    const preview = document.getElementById('preview');
+    preview.src = URL.createObjectURL(file);
+  }
+});

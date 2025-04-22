@@ -36,3 +36,23 @@ html {
     font-size: 2rem;
     font-weight: bold;
   }
+
+
+
+  .camera-button {
+    display: inline-block;
+    background-color: #0054b3;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .camera-button:hover {
+    background-color: #000000;
+  }
+  
+  
