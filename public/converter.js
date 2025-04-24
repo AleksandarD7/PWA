@@ -41,8 +41,6 @@ form.addEventListener('input', () => {
   outputField.value = (Math.round(outputTemp * 100) / 100) + ' ' + toUnit.toUpperCase();
 });
 
-
-
 document.getElementById('cameraInput').addEventListener('change', function (event) {
   const file = event.target.files[0];
   if (file) {
@@ -50,3 +48,21 @@ document.getElementById('cameraInput').addEventListener('change', function (even
     preview.src = URL.createObjectURL(file);
   }
 });
+
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(reg => {
+    reg.onupdatefound = () => {
+      const newSW = reg.installing;
+      newSW.onstatechange = () => {
+        if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+          newSW.postMessage('SKIP_WAITING'); 
+        }
+      };
+    };
+  });
+
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    window.location.reload(); 
+  });
+}
