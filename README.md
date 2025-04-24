@@ -10,3 +10,4 @@ Steps  to deploy on firebase:
 3. Use command firebase init to create a firebase project.
 4. Choose firebase hosting and public folder is created.
 5. Final step is to write the command firebase deploy and the Website link will be generated.
+6. test app
