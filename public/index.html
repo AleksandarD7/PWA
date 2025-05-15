@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="shortcut icon" href="https://c.s-microsoft.com/favicon.ico?v2" />
+    <link rel="shortcut icon" href="logo.png" />
     <title>Temperature Converter</title>
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="converter.css">
+    
   </head>
   <body>
     <form id="converter">
+      
         <img src="aspekt2.png" alt="Aspekt" width="215" height="76" />
         <label for="input-temp">Temperature</label>
         <input type="text" id="input-temp" name="input-temp" value="20" />
@@ -39,9 +41,30 @@
 
       <label for="cameraInput" class="camera-button">📷 Take a Photo</label>
       <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display: none;">
+      
+      <input type="file" id="galleryInput" accept="image/*" style="display: none;" />
+      <button id="openGalleryBtn">📁 Open Gallery</button>
+
+
+      <script>
+          const galleryInput = document.getElementById('galleryInput');
+          const galleryBtn = document.getElementById('openGalleryBtn');
+  
+          galleryBtn.addEventListener('click', () => {
+          if (galleryInput) {
+              galleryInput.click();
+          } else {
+            console.error('Gallery input not found');
+        }
+        });
+      </script>
+   
 
       <h3>Made By Aleksandar</h3>
    
+      <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+      data-id="aleksandard7" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" 
+      data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 
   </body>
 </html>

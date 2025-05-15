@@ -66,3 +66,22 @@ if ('serviceWorker' in navigator) {
     window.location.reload(); 
   });
 }
+
+
+
+
+document.getElementById('openGalleryBtn').addEventListener('click', () => {
+  document.getElementById('galleryInput').click();
+});
+
+document.getElementById('galleryInput').addEventListener('change', (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const imgURL = URL.createObjectURL(file);
+    const img = document.createElement('img');
+    img.src = imgURL;
+    img.style.maxWidth = '100%';
+    document.body.appendChild(img);
+  }
+});
+
