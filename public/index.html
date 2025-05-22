@@ -1,70 +1,50 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="shortcut icon" href="logo.png" />
-    <title>Temperature Converter</title>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="converter.css">
-    
-  </head>
-  <body>
-    <form id="converter">
-      
-        <img src="aspekt2.png" alt="Aspekt" width="215" height="76" />
-        <label for="input-temp">Temperature</label>
-        <input type="text" id="input-temp" name="input-temp" value="20" />
-        <label for="input-unit">From</label>
-        <select id="input-unit" name="input-unit">
-          <option value="c" selected>Celsius</option>
-          <option value="f">Fahrenheit</option>
-          <option value="k">Kelvin</option>
-        </select>
-        <label for="output-unit">To</label>
-        <select id="output-unit" name="output-unit">
-          <option value="c">Celsius</option>
-          <option value="f" selected>Fahrenheit</option>
-          <option value="k">Kelvin</option>
-        </select>
-        <output name="output-temp" id="output-temp" for="input-temp input-unit output-unit">68 F</output>
-      </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="shortcut icon" href="logo.png" />
+  <title>Temperature Converter</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="converter.css" />
+</head>
+<body>
+  <button id="refreshBtn">Refresh</button>
 
-      
-      <script src="converter.js"></script>
-      <script>
-        if('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw.js', { scope: '/' });
-        }
-        </script>
+  <form id="converter">
+    <img src="aspekt2.png" alt="Aspekt" width="215" height="76" />
+    <label for="input-temp">Temperature</label>
+    <input type="text" id="input-temp" name="input-temp" value="20" />
+    <label for="input-unit">From</label>
+    <select id="input-unit" name="input-unit">
+      <option value="c" selected>Celsius</option>
+      <option value="f">Fahrenheit</option>
+      <option value="k">Kelvin</option>
+    </select>
+    <label for="output-unit">To</label>
+    <select id="output-unit" name="output-unit">
+      <option value="c">Celsius</option>
+      <option value="f" selected>Fahrenheit</option>
+      <option value="k">Kelvin</option>
+    </select>
+    <output name="output-temp" id="output-temp" for="input-temp input-unit output-unit">68 F</output>
+  </form>
 
+  <label for="cameraInput" class="camera-button">📷 Take a Photo</label>
+  <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display: none;" />
 
-      <label for="cameraInput" class="camera-button">📷 Take a Photo</label>
-      <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display: none;">
-      
-      <input type="file" id="galleryInput" accept="image/*" style="display: none;" />
-      <button id="openGalleryBtn">📁 Open Gallery</button>
+  <input type="file" id="galleryInput" accept="image/*" style="display: none;" />
+  <button id="openGalleryBtn" type="button">📁 Open Gallery</button>
 
+  <button id="clearImageBtn" type="button">Clear Image</button>
 
-      <script>
-          const galleryInput = document.getElementById('galleryInput');
-          const galleryBtn = document.getElementById('openGalleryBtn');
-  
-          galleryBtn.addEventListener('click', () => {
-          if (galleryInput) {
-              galleryInput.click();
-          } else {
-            console.error('Gallery input not found');
-        }
-        });
-      </script>
-   
+  <img id="preview" alt="Image preview" style="max-width: 100%; display: none;" />
 
-      <h3>Made By Aleksandar</h3>
-   
-      <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
-      data-id="aleksandard7" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" 
-      data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+  <h3>Made By Aleksandar ✌</h3>
 
-  </body>
+  <script src="converter.js"></script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+    data-id="aleksandard7" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" 
+    data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
 </html>

@@ -58,3 +58,95 @@ html {
  h3{
   font-size: small;
  }
+
+button, .camera-button {
+  background-color: #5F7FFF;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin: 4px 6px 8px 0;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+button:hover, .camera-button:hover {
+  background-color: #475FCC;
+}
+
+button:focus, .camera-button:focus {
+  outline: 2px solid #3747B9;
+  outline-offset: 2px;
+}
+
+.camera-button {
+  display: inline-block;
+  line-height: 1.1;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 0.75rem;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#preview {
+  margin-top: 0.75rem;
+  border: 2px solid #5F7FFF;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+form label {
+  display: block;
+  margin: 8px 0 3px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  border: 1.3px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+output {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+#refreshBtn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-color: #e63946;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  user-select: none;
+  touch-action: manipulation;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+#refreshBtn:hover,
+#refreshBtn:focus {
+  background-color: #b32731;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  outline: none;
+}
