@@ -150,3 +150,11 @@ output {
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
   outline: none;
 }
+
+
+.version-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #555;
+  font-size: 0.85rem;
+}

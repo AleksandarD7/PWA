@@ -92,9 +92,11 @@ clearImageBtn.addEventListener('click', () => {
 });
 
 refreshBtn.addEventListener('click', () => {
-  const url = new URL(window.location.href);
-  url.searchParams.set('cachebuster', Date.now());
-  window.location.href = url.toString();
+  caches.keys().then(function (names) {
+    for (let name of names) caches.delete(name);
+  }).then(() => {
+    location.reload(true);
+  });
 });
 
 if ('serviceWorker' in navigator) {
@@ -113,3 +115,13 @@ if ('serviceWorker' in navigator) {
     window.location.reload();
   });
 }
+
+fetch('/version.json')
+  .then(res => res.json())
+  .then(data => {
+    const versionEl = document.getElementById('appVersion');
+    if (versionEl) {
+      versionEl.textContent = data.version;
+    }
+  })
+  .catch(err => console.error('Failed to load version:', err));
