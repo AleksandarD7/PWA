@@ -116,12 +116,13 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+
+
 fetch('/version.json')
   .then(res => res.json())
   .then(data => {
     const versionEl = document.getElementById('appVersion');
-    if (versionEl) {
-      versionEl.textContent = data.version;
+    if (versionEl && data.version) {
+      versionEl.textContent = 'v' + data.version;
     }
-  })
-  .catch(err => console.error('Failed to load version:', err));
+  });

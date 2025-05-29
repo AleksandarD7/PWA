@@ -1,0 +1,12 @@
+{
+  "name": "temperature-converter",
+  "version": "1.0.0",
+  "description": "A simple temperature converter app with auto version bump",
+  "main": "bump-version.js",
+  "scripts": {
+    "bump": "node bump-version.js",
+    "deploy": "npm run bump && firebase deploy"
+  },
+  "author": "Aleksandar",
+  "license": "MIT"
+}
