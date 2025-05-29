@@ -1,4 +1,6 @@
 const CACHE_NAME = 'temperature-converter-v4'; // update version on deploy
+const VERSION = '1.0.1'; // update version on deploy
+
 
 const ASSETS_TO_CACHE = [
   '/',
